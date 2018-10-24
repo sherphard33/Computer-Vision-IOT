@@ -48,7 +48,7 @@ TOTAL_CONSEC = 0
 TOTAL_THRESH = 20
 
 # initialize if the gun sound has been triggered
-SANTA = False # change the name to match the name used in making model
+Foe = False # change the name to match the name used in making model
 
 # load the model
 print("[INFO] Loading Data...")
