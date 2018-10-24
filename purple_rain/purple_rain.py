@@ -78,27 +78,27 @@ while True:
 
 	# classify the input image and initialize the label and
 	# probability of the prediction
-	(notSanta, santa) = model.predict(image)[0]
+	(notFoe, foe) = model.predict(image)[0]
 	label = "Not Target"
-	proba = notSanta
+	proba = notFoe
 	
 
         
 	# check to see if target was detected using our convolutional
 	# neural network
-	if santa > notSanta:
+	if foe > notFoe:
 		# update the label and prediction probability
 		label = "Target Aquired"
-		proba = santa
+		proba = foe
 
 		# increment the total number of consecutive frames that
 		# contain santa
 		TOTAL_CONSEC += 1
 
 		# check to see if we should raise the santa alarm
-		if not SANTA and TOTAL_CONSEC >= TOTAL_THRESH:
+		if not Foe and TOTAL_CONSEC >= TOTAL_THRESH:
 			# indicate that target has been found
-			SANTA = True
+			Foe = True
 
 			# light up that Joly fat man.
 			gunThread = Thread(target=destroy, args=())
@@ -117,7 +117,7 @@ while True:
 	# gun sound
 	else:
 		TOTAL_CONSEC = 0
-		SANTA = False
+		Foe = False
 
 	# build the label and draw it on the frame
 	label = "{}: {:.2f}%".format(label, proba * 100)
