@@ -100,7 +100,7 @@ while True:
 			# indicate that target has been found
 			Foe = True
 
-			# light up that Joly fat man.
+			# light up that Foe.
 			gunThread = Thread(target=destroy, args=())
 			gunThread.daemon = True
 			gunThread.start()
