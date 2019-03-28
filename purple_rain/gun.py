@@ -1,6 +1,7 @@
+#Phoenix Aiden Magician Girl
+#Code that runs the Gun Turret Servos
 from __future__ import division
 import time
-
 import Adafruit_PCA9685
 import socket
 import sys
@@ -32,17 +33,14 @@ def set_servo_pulse(channel, pulse):
 pwm.set_pwm_freq(60)
 #------------------------------------========================
 
-
-#===================================================================
-
-#=========================================
-#Call this with parameter target or rest
+#Set servos to shoot mode
 def destroy():
         #time.sleep(2)
         pwm.set_pwm(15, 0, 270)
         time.sleep(1)
         pwm.set_pwm(0, 0, 590)
         time.sleep(1)
+#Set servos to rest mode        
 def rest():      
         time.sleep(2)       
         pwm.set_pwm(0, 0, 120)
@@ -50,13 +48,5 @@ def rest():
         pwm.set_pwm(15, 0, 500)
         time.sleep(1)
      
-
-#===================================================================8888
-        #Sending Reply to phone
-
-#========================================================================
-##########################################################################
-
- 
 GPIO.cleanup()
             
